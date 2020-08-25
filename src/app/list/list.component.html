@@ -1,0 +1,64 @@
+<div class="container-fluid">
+    <h4>SpaceX Launch Programs</h4>
+    <div class="row">
+        <div class="col-lg-2 col-md-2 col-sm-2 col-12 ">
+            <div class="filter card">
+                <!-- Launch year -->
+                <h5 style="text-align: left;">Filters</h5>
+                <span style="text-decoration: underline; text-align:center;">Launch Year</span>
+                <ul class="filter-btn text-center">
+                    <li><button type="button" class="btn custom-btn" (click)="btnToggle(2006)" value="2006">2006</button></li>
+                    <li><button type="button" class="btn custom-btn" (click)="btnToggle(2007)" value="2007">2007</button></li>
+                    <li><button type="button" class="btn custom-btn" (click)="btnToggle(2008)" value="2008">2008</button></li>
+                    <li><button type="button" class="btn custom-btn" (click)="btnToggle(2009)" value="2009">2009</button></li>
+                    <li><button type="button" class="btn custom-btn" (click)="btnToggle(2010)" value="2010">2010</button></li>
+                    <li><button type="button" class="btn custom-btn" (click)="btnToggle(2011)" value="2011">2011</button></li>
+                    <li><button type="button" class="btn custom-btn" (click)="btnToggle(2012)" value="2012">2012</button></li>
+                    <li><button type="button" class="btn custom-btn" (click)="btnToggle(2013)" value="2013">2013</button></li>
+                    <li><button type="button" class="btn custom-btn" (click)="btnToggle(2014)" value="2014">2014</button></li>
+                    <li><button type="button" class="btn custom-btn" (click)="btnToggle(2015)" value="2015">2015</button></li>
+                    <li><button type="button" class="btn custom-btn" (click)="btnToggle(2016)" value="2016">2016</button></li>
+                    <li><button type="button" class="btn custom-btn" (click)="btnToggle(2017)" value="2017">2017</button></li>
+                    <li><button type="button" class="btn custom-btn" (click)="btnToggle(2018)" value="2018">2018</button></li>
+                    <li><button type="button" class="btn custom-btn" (click)="btnToggle(2019)" value="2019">2019</button></li>
+                    <li><button type="button" class="btn custom-btn" (click)="btnToggle(2020)" value="2020">2020</button></li>
+                </ul>
+
+                <!-- Successful launch -->
+                <span style="text-decoration: underline; text-align:center;">Successful Launch</span>
+                <ul class="filter-btn text-center">
+                    <li><button type="button" class="btn custom-btn">True</button></li>
+                    <li><button type="button" class="btn custom-btn">False</button></li>
+                </ul>
+
+                <!-- Successful landing -->
+                <span style="text-decoration: underline; text-align:center;">Successful Landing</span>
+                <ul class="filter-btn text-center">
+                    <li><button type="button" class="btn custom-btn">True</button></li>
+                    <li><button type="button" class="btn custom-btn">False</button></li>
+                </ul>
+            </div>
+        </div>
+        <div class="col-lg-10 col-md-10 col-sm-10 col-12">
+            <div class="row">
+                <div class="col-lg-3 col-md-6 col-sm-6 col-12" style="width: 18rem;" *ngFor="let data of listdata">
+                    <div class="col-12 card br mt-2 mb-2 pt-4">
+                        <div class="mission-img">
+                            <img class="card-img-top" src={{data.links.mission_patch}} alt="">
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title">{{data.mission_name}} #{{data.flight_number}}</h5>
+                            <h6>Mission Ids: {{data.mission_id}}</h6>
+                            <ul *ngFor="let listmission of data">
+                                <li>{{listmission.mission_id}}</li>
+                            </ul>
+                            <h6>Launch Year: {{data.launch_year}}</h6>
+                            <h6>Successfull Launch: {{data.launch_success}}</h6>
+                            <h6>Successfull Land: {{data.land_success}}</h6>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div>

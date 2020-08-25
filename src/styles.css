@@ -1,1 +1,41 @@
 /* You can add global styles to this file, and also import other style files */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: silver;
+}
+
+.br {
+    border-radius: 4px;
+}
+
+.mission-img {
+    background: silver;
+}
+
+.filter-btn li {
+    list-style-type: none;
+    text-align: center;
+    display: inline-block;
+}
+
+.custom-btn {
+    background: #C5E09B;
+    height: 30px;
+    padding: 0;
+    width: 70px;
+    margin: 13px;
+}
+
+.active-btn {
+    background: #7CBA01;
+}
+
+.disable-btn {
+    background: #C5E09B
+}
